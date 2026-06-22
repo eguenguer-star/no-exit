@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>NO EXIT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="hud" class="hidden">
+        <div id="hud-left">
+            <span id="run-id-display">RUN: RM-0000</span>
+            <span id="personality-display" class="tag">SYSTEM</span>
+        </div>
+        <div id="hud-right">
+            <div id="level-dots"></div>
+            <span id="live-timer">00:00</span>
+        </div>
+    </div>
+
+    <main id="view-port">
+        <section id="screen-intro" class="view active">
+            <h1 class="title">NO EXIT</h1>
+            
+            <div id="system-manifest">
+                <div class="manifest-header">SYSTEM MANIFEST // OPERATIONAL DIRECTIVE</div>
+                <div class="manifest-body">
+                    <p>> Objective: Terminate current system execution layer by locating active exit vectors.</p>
+                    <p>> Mobile Compatibility: Fully optimized for touch vectors. Gestures, swipes, and long-press metrics are dynamically captured.</p>
+                    <p>> Procedural Engine: Every iteration synthesizes a unique sequence of micro-levels, environmental anomalies, and interface personalities.</p>
+                    <p>> System Controls: Tap the <span class="hotkey">[R]</span> indicator or use interface prompts to force-mutate reality loops if containment becomes absolute.</p>
+                </div>
+            </div>
+
+            <div class="menu-actions">
+                <button id="btn-enter" class="ui-btn primary">INITIALIZE SESSION</button>
+            </div>
+            <div id="intro-loader" class="spinner hidden"></div>
+        </section>
+
+        <section id="screen-game" class="view">
+            <div id="level-announcer"></div>
+            <div id="sandbox"></div>
+            <div id="mobile-reset-anchor">Tap here or press 'R' to mutate reality</div>
+        </section>
+
+        <section id="screen-outro" class="view">
+            <h1 id="outro-heading">TERMINAL CLOSED.</h1>
+            
+            <div class="summary-card">
+                <div class="stat-line"><span>REALITY VECTOR:</span><span id="summary-id" class="value"></span></div>
+                <div class="stat-line"><span>BEHAVIOR SEED:</span><span id="summary-trait" class="value"></span></div>
+                <div class="stat-line"><span>STAGES RECTIFIED:</span><span id="summary-stages" class="value"></span></div>
+                <div class="stat-line"><span>EXECUTION TIME:</span><span id="summary-time" class="value"></span></div>
+            </div>
+
+            <button id="btn-mutate" class="ui-btn primary">MUTATE NEW REALITY</button>
+        </section>
+    </main>
+
+    <div id="fake-error-box" class="error-modal hidden">
+        <div class="error-header">CRITICAL_EXCEPTION_ALERT</div>
+        <div class="error-body">
+            <p>An unhandled memory segmentation fault occurred in the localized system thread.</p>
+            <p id="error-dynamic-text">Reason: Quantum layout divergence.</p>
+        </div>
+        <button id="error-dismiss" class="ui-btn small">DISMISS LOG</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

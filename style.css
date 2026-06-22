@@ -1,0 +1,327 @@
+/* Structural Core & Typography Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: none; /* Prevents mobile double-tap zoom & panning disruption */
+}
+
+body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: 'Courier New', Courier, monospace;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#view-port {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 800px;
+    max-height: 700px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Screen Transitions Hierarchy */
+.view {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease, visibility 0.3s;
+    text-align: center;
+    padding: 10px;
+}
+
+.view.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* System Manifest Panel */
+#system-manifest {
+    width: 100%;
+    max-width: 580px;
+    border: 1px solid #222;
+    background-color: #030303;
+    text-align: left;
+    margin: 20px 0;
+}
+
+.manifest-header {
+    background-color: #111;
+    color: #888;
+    padding: 8px 12px;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #222;
+}
+
+.manifest-body {
+    padding: 15px;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    color: #aaa;
+}
+
+.manifest-body p {
+    margin-bottom: 10px;
+}
+
+.manifest-body p:last-child {
+    margin-bottom: 0;
+}
+
+.hotkey {
+    color: #fff;
+    font-weight: bold;
+}
+
+/* HUD System Matrix */
+#hud {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    color: #444;
+    z-index: 500;
+}
+
+#hud-left, #hud-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.tag {
+    border: 1px solid #222;
+    padding: 1px 6px;
+    font-size: 0.65rem;
+    color: #666;
+}
+
+#level-dots {
+    display: flex;
+    gap: 6px;
+}
+
+.dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #111;
+}
+
+.dot.active {
+    background-color: #fff;
+    box-shadow: 0 0 6px #fff;
+}
+
+.dot.passed {
+    background-color: #444;
+}
+
+/* Master Button System */
+.ui-btn {
+    background: transparent;
+    border: 1px solid #333;
+    color: #888;
+    padding: 12px 24px;
+    font-family: inherit;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    touch-action: manipulation;
+}
+
+.ui-btn:hover, .ui-btn:active {
+    border-color: #fff;
+    color: #fff;
+}
+
+.ui-btn.primary {
+    border-color: #666;
+    color: #fff;
+}
+
+.ui-btn.small {
+    padding: 6px 12px;
+    font-size: 0.7rem;
+}
+
+/* Layout Elements for Level Generators */
+.btn-row {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+/* Procedural Sandbox Environments */
+#sandbox {
+    width: 100%;
+    height: 320px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    border: 1px dashed #111;
+}
+
+#level-announcer {
+    font-size: 1rem;
+    letter-spacing: 2px;
+    min-height: 1.5rem;
+    color: #fff;
+    font-weight: 300;
+}
+
+#mobile-reset-anchor {
+    font-size: 0.65rem;
+    color: #222;
+    margin-top: 15px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    padding: 5px;
+}
+#mobile-reset-anchor:active {
+    color: #666;
+}
+
+/* Specialized Micro-level Structural Modifiers */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.grid-cell {
+    width: 60px;
+    height: 60px;
+    border: 1px solid #222;
+    cursor: pointer;
+}
+
+/* Spinner Engine */
+.spinner {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #222;
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Summary UI Cards */
+.summary-card {
+    border: 1px dashed #222;
+    padding: 20px;
+    margin: 25px 0;
+    text-align: left;
+    width: 100%;
+    max-width: 340px;
+}
+
+.stat-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    color: #666;
+}
+
+.stat-line .value { color: #fff; }
+
+/* Event Injection CSS Engines */
+.error-modal {
+    position: fixed;
+    background: #000;
+    border: 1px solid #fff;
+    width: 280px;
+    padding: 15px;
+    z-index: 1000;
+    text-align: left;
+}
+
+.error-header {
+    border-bottom: 1px solid #333;
+    padding-bottom: 6px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 0.75rem;
+}
+
+.error-body {
+    font-size: 0.7rem;
+    color: #aaa;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+/* Master Modifiers for Personalities and States */
+.title {
+    font-size: 1.8rem;
+    letter-spacing: 6px;
+    font-weight: 300;
+}
+
+.text-muted { color: #444; }
+
+/* Structural Animations Matrix */
+@keyframes shake-anim {
+    0%, 100% { transform: translate(0, 0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(2px, -1px); }
+    60% { transform: translate(-1px, -2px); }
+    80% { transform: translate(2px, 1px); }
+}
+.evt-shake { animation: shake-anim 0.12s infinite; }
+.evt-corrupt { filter: blur(1.5px) contrast(1.2); opacity: 0.7; }
+.evt-invert { filter: invert(1); }
+
+.hidden { display: none !important; }
+
+/* --- RESPONSIVE MEDIA QUERIES (HANDY FIXES) --- */
+@media (max-width: 480px) {
+    .title { font-size: 1.5rem; letter-spacing: 4px; }
+    #system-manifest { margin: 10px 0; }
+    .manifest-body { font-size: 0.7rem; padding: 10px; }
+    #sandbox { height: 280px; }
+    .summary-card { max-width: 100%; }
+    #hud { padding: 15px; }
+    .error-modal { width: 85%; left: 7.5% !important; top: 30% !important; }
+}
